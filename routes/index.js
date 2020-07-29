@@ -47,10 +47,7 @@ router.get("/excel/aoa", function (req, res) {
 
   try {
     // Simpan filenya
-    XLSX.writeFile(
-      wb,
-      `${(__dirname, "../downloads")}${path.sep}${fileName}.xls`
-    );
+    XLSX.writeFile(wb, `${downloadFolder}${path.sep}${fileName}.xls`);
 
     res.download(`${downloadFolder}${path.sep}${fileName}.xls`);
   } catch (e) {
